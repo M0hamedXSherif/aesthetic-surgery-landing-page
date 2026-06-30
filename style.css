@@ -1,0 +1,538 @@
+
+/* ================================
+CSS VARIABLES — the color system
+Define colors once, use everywhere
+================================ */
+
+:root {
+  /* :root means the very top of the page — <html> element */
+  /* These are the DARK MODE values — your default */
+  --bg-primary:     #16153e;
+  --bg-secondary:   #1A1760;
+  --text-primary:   #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.55);
+  --text-muted:     rgba(255, 255, 255, 0.4);
+  --border-color:   rgba(255, 255, 255, 0.08);
+  --stat-border:    rgba(255, 255, 255, 0.15);
+  --gold:           #C8A96E;
+  --nav-link-color: rgba(255, 255, 255, 0.65);
+}
+
+/* When body has class "light-mode", override the variables */
+/* CSS sees this and swaps ALL colors at once */
+body.light-mode {
+  --bg-primary:     #F5F3EE;
+  --bg-secondary:   #ECEAE3;
+  --text-primary:   #12104A;
+  --text-secondary: rgba(18, 16, 74, 0.65);
+  --text-muted:     rgba(18, 16, 74, 0.45);
+  --border-color:   rgba(18, 16, 74, 0.1);
+  --stat-border:    rgba(18, 16, 74, 0.15);
+  --gold:           #B8923A;
+  --nav-link-color: rgba(18, 16, 74, 0.7);
+}
+
+/* ================================
+   RESET — browser has ugly defaults
+   we wipe them out first
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* The * means "target EVERY element on the page"
+   margin: 0 removes default spacing browsers add
+   padding: 0 removes default inner spacing
+   box-sizing: border-box means: when I say width 200px,
+   the element is EXACTLY 200px — borders and padding
+   included. Without this, sizes behave unexpectedly. */
+
+/* ================================
+GLOBAL SETTINGS
+================================ */
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* font-family: what font the whole page uses
+   background-color: the deep navy from your design
+   color: default text color — white on navy */
+
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+/* display: flex — this is the magic.
+   flex turns a box into a "row" that lines
+   its children up side by side automatically.
+   justify-content: space-between pushes children
+   to opposite ends (logo on left, btn on right)
+   align-items: center lines them up vertically
+   padding: 18px top/bottom, 60px left/right */
+
+.nav-logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.nav-logo img{
+  width: 35px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+/* gap: 36px puts 36px of space between each link
+   without needing margin on every single one */
+
+.nav-links a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* .nav-links a means: target every <a> tag
+   that lives INSIDE .nav-links
+   text-decoration: none removes the underline */
+
+/* ================================
+   NAV RIGHT
+================================ */
+
+.nav-right{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+/* EXTRA FROM ME */
+.nav-right img{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  border-radius: 24px;
+  padding: 8px 22px;
+  color: var(--gold);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* cursor: pointer makes the mouse turn into
+   a hand when you hover — signals clickable */
+
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.nav-right button:hover{
+  cursor: pointer;
+}
+
+.nav-right svg{
+  width: 1.68rem;
+  color: #F5F3EE;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 60px;
+  min-height: 90vh;
+}
+
+/* display: flex here puts hero-left and hero-right
+   SIDE BY SIDE — this is why flexbox is powerful.
+   The exact same property, used on a different
+   element, solves the layout problem entirely.
+   min-height: 90vh means the section takes up
+   at least 90% of the screen height */
+
+.hero-left {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* flex-direction: column stacks children vertically
+   gap: 24px puts space between each child
+   max-width stops the text from stretching too wide */
+
+.hero-tag {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-heading {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.15;
+  font-family: 'Playfair Display', serif;
+  color: var(--text-primary);
+}
+
+/* line-height: 1.15 controls space between lines
+   of the heading. 1.15 means 115% of the font size */
+
+.hero-sub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 32px;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--text-primary);
+  border-radius: 32px;
+  padding: 14px 32px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+/* ================================
+   STATS ROW
+================================ */
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 4px;
+  padding-right: 32px;
+  border-right: 1px solid var(--stat-border);
+}
+
+.stat:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.stat-number {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+
+/* ================================
+   HERO IMAGE
+================================ */
+
+.hero-right {
+  flex-shrink: 0;
+}
+
+/* flex-shrink: 0 prevents the image column from
+   being squeezed when the text needs more space */
+
+.hero-img {
+  width: 420px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 16px 16px 120px 120px;
+}
+
+/* object-fit: cover means the image fills its box
+   without stretching — it crops smartly instead
+   border-radius: 16px 16px 120px 120px means:
+   top-left, top-right, bottom-right, bottom-left
+   this gives the rounded bottom from your design */
+
+/* ================================
+   GRADIENT BORDER — HERO IMAGE
+================================ */
+
+.img-border-wrap {
+  /* This is the outer box — it shows the gradient */
+  padding: 3px;
+  border-radius: 12px 12px 160px 160px;
+
+  /* The animated gradient background */
+  background: conic-gradient(
+    from var(--angle),
+    #C8A96E,
+    #17b727,
+    #7B2FFF,
+    #00C9FF,
+    #a41212,
+    #c4b408,
+    #0827c4,
+    #7c08c4,
+    #42bd0d,
+    #C8A96E
+  );
+
+  /* Animation — rotates the --angle variable
+     from 0 to 360 degrees, forever, smoothly */
+  animation: spin-border 15s linear infinite;
+}
+
+/* hero-img now lives inside the wrapper
+   update it to remove its own border-radius
+   and let the wrapper control the shape */
+.hero-img {
+  width: 400px;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 10px 10px 160px 160px;
+  display: block;
+}
+
+/* @keyframes defines what happens during animation
+   'from' = start state, 'to' = end state
+   here we animate a CSS custom property --angle */
+@keyframes spin-border {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+/* This registers --angle as an animatable property
+   Without this, CSS doesn't know --angle is a number
+   it can smoothly interpolate between */
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ================================
+   RESPONSIVE — TABLET
+   Triggers when screen is 1024px or narrower
+================================ */
+
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 16px 30px;
+    /* less side padding — screen is narrower */
+  }
+
+  .nav-links {
+    gap: 22px;
+    /* tighten link spacing so they all still fit */
+  }
+
+  .hero {
+    padding: 60px 30px;
+    /* reduce the huge 80px/60px desktop padding */
+  }
+
+  .hero-heading {
+    font-size: 44px;
+    /* 60px was too big for tablet width */
+  }
+
+  .hero-img {
+    width: 320px;
+    height: 400px;
+    /* smaller image so it doesn't dominate the screen */
+  }
+
+}
+
+
+/* ================================
+   RESPONSIVE — MOBILE
+   Triggers when screen is 767px or narrower
+   This OVERRIDES the tablet rules above when
+   the screen gets even smaller
+================================ */
+
+@media (max-width: 767px) {
+
+  .navbar {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    /* flex-wrap lets nav items drop to a new line
+       instead of squishing or overflowing */
+  }
+
+  .nav-links {
+    display: none;
+    /* hide the full link list on mobile —
+       in a real build this becomes a hamburger menu,
+       which is our NEXT JavaScript lesson */
+  }
+
+  .nav-right {
+    gap: 8px;
+  }
+
+  .nav-btn {
+    padding: 7px 16px;
+    font-size: 13px;
+    /* slightly smaller button to save space */
+  }
+
+  .hero {
+    flex-direction: column;
+    /* THIS is the key change — row becomes column
+       text stacks ABOVE the image instead of beside it */
+    padding: 40px 20px;
+    text-align: left;
+    min-height: auto;
+    /* auto removes the forced 90vh —
+       mobile content should only be as tall as it needs */
+  }
+
+  .hero-left {
+    max-width: 100%;
+    /* let text use the FULL mobile width,
+       not the 520px desktop limit */
+    gap: 18px;
+    order: 2;
+  }
+
+  .hero-heading {
+    font-size: 32px;
+    /* 60px desktop → 44px tablet → 32px mobile
+       this is called a "type scale" — shrinking
+       proportionally at each breakpoint */
+    line-height: 1.2;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    /* stack buttons vertically — side by side
+       buttons are hard to tap accurately on mobile */
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    /* full-width buttons are easier to tap
+       and look more intentional on mobile */
+    text-align: center;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    /* if stats don't fit in one row, wrap them */
+    gap: 16px;
+  }
+
+  .stat {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+    /* remove the divider lines —
+       they look awkward once stats wrap to new lines */
+  }
+
+  .hero-right {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    order: -1;
+    /* center the image now that it's on its own row */
+  }
+
+  .img-border-wrap {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 360px;
+    /* width: 100% means "fill whatever space
+       the parent container gives you" — this is
+       how images become flexible instead of fixed */
+  }
+
+  .img-border-wrap{
+    margin-bottom: 30px;
+  }
+
+}
