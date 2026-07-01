@@ -311,6 +311,7 @@ body {
   height: 520px;
   object-fit: cover;
   border-radius: 16px 16px 120px 120px;
+  object-position: left top;
 }
 
 /* object-fit: cover means the image fills its box
@@ -319,11 +320,11 @@ body {
    top-left, top-right, bottom-right, bottom-left
    this gives the rounded bottom from your design */
 
-/* ================================
+   /* ================================
    GRADIENT BORDER — HERO IMAGE
-================================ */
-
-.img-border-wrap {
+   ================================ */
+   
+   .img-border-wrap {
   /* This is the outer box — it shows the gradient */
   padding: 3px;
   border-radius: 12px 12px 160px 160px;
@@ -409,7 +410,8 @@ body {
 
   .hero-img {
     width: 320px;
-    height: 400px;
+    aspect-ratio: 4 / 9;
+    object-position: center top;
     /* smaller image so it doesn't dominate the screen */
   }
 
