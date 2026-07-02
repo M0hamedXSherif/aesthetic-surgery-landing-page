@@ -23,6 +23,6 @@ toggleBtn.addEventListener('click', function() {
 
   // If light mode is ON → show moon icon (click to go dark)
   // If light mode is OFF → show sun icon (click to go light)
-  toggleBtn.textContent = isLight ? '🌙' : '☀️';
+  toggleBtn.textContent = isLight ? '🌙' : '🌞';
 
 });
