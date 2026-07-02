@@ -89,6 +89,12 @@ body {
    align-items: center lines them up vertically
    padding: 18px top/bottom, 60px left/right */
 
+.nav-list{
+  display: none;
+  fill: var(--text-secondary);
+  transition: fill 0.3s ease;
+}
+
 .nav-logo {
   font-size: 18px;
   font-weight: 600;
@@ -410,7 +416,6 @@ body {
 
   .hero-img {
     width: 320px;
-    aspect-ratio: 4 / 9;
     object-position: center top;
     /* smaller image so it doesn't dominate the screen */
   }
@@ -434,6 +439,17 @@ body {
        instead of squishing or overflowing */
   }
 
+  .nav-list{
+    display: block;
+  }
+
+  .menu-icon { display: block; cursor: pointer; }
+  .nav-links { display: none; }
+
+  .menu-icon { order: 1; }
+  .nav-logo { order: 2; }
+  .nav-right { order: 3; }
+
   .nav-links {
     display: none;
     /* hide the full link list on mobile —
@@ -445,10 +461,12 @@ body {
     gap: 8px;
   }
 
+  .nav-right img{
+    display: none;
+  }
+
   .nav-btn {
-    padding: 7px 16px;
-    font-size: 13px;
-    /* slightly smaller button to save space */
+    display: none;
   }
 
   .hero {
