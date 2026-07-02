@@ -388,6 +388,195 @@ body {
 }
 
 /* ================================
+   ABOUT SECTION
+================================ */
+
+.about {
+  padding: 80px 60px;
+  background-color: var(--bg-primary);
+}
+
+/* ── Section header (centered) ── */
+
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 18px;
+}
+
+.section-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto;
+  /* margin: 0 auto is the classic trick to
+     horizontally center a block element —
+     auto means "split remaining space equally
+     on both sides" */
+}
+
+/* ── Two column grid ── */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  align-items: start;
+  /* align-items: start means each column starts
+     at the top — not stretched to equal height */
+}
+
+/* ── LEFT COLUMN ── */
+
+.about-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.about-quote {
+  border-left: 3px solid var(--gold);
+  padding-left: 18px;
+  margin-bottom: 28px;
+}
+
+.about-quote p {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.about-quote cite {
+  font-size: 13px;
+  color: var(--gold);
+  font-style: normal;
+  /* browsers make cite italic by default
+     font-style: normal overrides that */
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  /* repeat(3, 1fr) is shorthand for 1fr 1fr 1fr
+     cleaner when you have many equal columns */
+}
+
+.about-stat-box {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: var(--bg-secondary);
+}
+
+.about-stat-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.about-stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ── RIGHT COLUMN ── */
+
+.about-bio {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  font-style: italic;
+}
+
+.credentials-label {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.credentials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.credential-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 14px 16px;
+  transition: border-color 0.2s ease;
+}
+
+.credential-card:hover {
+  border-color: var(--gold);
+  /* subtle gold border on hover —
+     gives the card a responsive feeling
+     without any JavaScript needed */
+}
+
+.credential-img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  /* flex-shrink: 0 stops the image from
+     squishing when the text beside it is long */
+}
+
+.credential-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.credential-school {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.credential-degree {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ================================
    RESPONSIVE — TABLET
    Triggers when screen is 1024px or narrower
 ================================ */
@@ -553,6 +742,28 @@ body {
 
   .img-border-wrap{
     margin-bottom: 30px;
+  }
+
+  /* About section — mobile */
+  .about {
+    padding: 50px 20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    /* single column on mobile —
+       grid switches from 2 columns to 1
+       exactly like flexbox's column trick */
+    gap: 32px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    /* keep 3 across — they're small enough */
   }
 
 }
