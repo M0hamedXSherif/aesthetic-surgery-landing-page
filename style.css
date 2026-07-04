@@ -7,8 +7,10 @@ Define colors once, use everywhere
 :root {
   /* :root means the very top of the page — <html> element */
   /* These are the DARK MODE values — your default */
-  --bg-primary:     #16153e;
+  --bg-primary:     #0d0c38;
   --bg-secondary:   #1A1760;
+  --nav-bg: #4c4c4ca1;
+  --canvas-bg: #0a0a12;
   --text-primary:   #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.55);
   --text-muted:     rgba(255, 255, 255, 0.4);
@@ -21,10 +23,12 @@ Define colors once, use everywhere
 /* When body has class "light-mode", override the variables */
 /* CSS sees this and swaps ALL colors at once */
 body.light-mode {
-  --bg-primary:     #F5F3EE;
+  --bg-primary:     #d5d5d5ef;
   --bg-secondary:   #ECEAE3;
+  --nav-bg: #7a7a79d4;
+  --canvas-bg: #888888d1;
   --text-primary:   #12104A;
-  --text-secondary: rgba(18, 16, 74, 0.65);
+  --text-secondary: #cbcbcb;
   --text-muted:     rgba(18, 16, 74, 0.45);
   --border-color:   rgba(18, 16, 74, 0.1);
   --stat-border:    rgba(18, 16, 74, 0.15);
@@ -65,7 +69,14 @@ body {
    background-color: the deep navy from your design
    color: default text color — white on navy */
 
-
+/* Canvas's Styling */
+canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--canvas-bg); /* deep dark background */
+  z-index: -1;
+}
 
 /* ================================
    NAVBAR
@@ -77,7 +88,7 @@ body {
   align-items: center;
   padding: 18px 60px;
   border: 1px solid var(--border-color);
-  background-color: var(--bg-primary);
+  background-color: var(--nav-bg);
   transition: background-color 0.3s ease;
   border-radius: 15px;
   margin: 5px;
