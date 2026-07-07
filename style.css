@@ -26,7 +26,7 @@ Define colors once, use everywhere
 body.light-mode {
   --bg-primary:     #d5d5d5ef;
   --bg-secondary:   #ECEAE3;
-  --nav-bg: #b8923ad4;
+  --nav-bg: #7c5e1ad4;
   --list-color: #58440b;
   --canvas-bg: #d4e4e3d1;
   --text-primary:   #12104A;
@@ -875,6 +875,342 @@ body.light-mode .service-icon {
 
 
 /* ================================
+   CONTACT SECTION
+================================ */
+
+.contact {
+  padding: 80px 60px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Two column grid ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 48px;
+  margin-bottom: 28px;
+}
+
+/* ── Form card ── */
+.contact-form-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 28px 24px;
+}
+
+.form-privacy-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.form-input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease;
+  /* outline: none removes the default browser
+     focus ring — we'll add our own below */
+}
+
+.form-input:focus {
+  border-color: var(--gold);
+  /* gold border appears when the user clicks
+     into an input — clear visual feedback */
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+  /* ::placeholder is a pseudo-element that
+     targets the ghost text inside empty inputs */
+}
+
+.form-select {
+  appearance: none;
+  /* appearance: none removes the browser's default
+     dropdown arrow styling so we control it fully */
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23C8A96E' viewBox='0 0 256 256'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  /* we inject a custom gold chevron arrow as
+     an SVG background image on the right side */
+}
+
+.form-select option {
+  background: #1A1760;
+  color: #ffffff;
+}
+
+.form-textarea {
+  resize: vertical;
+  /* resize: vertical lets the user drag the
+     textarea taller but not wider — prevents
+     layout breaking */
+  min-height: 90px;
+  line-height: 1.6;
+}
+
+.form-submit-btn {
+  background: var(--gold);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 32px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  margin-top: 4px;
+}
+
+.form-submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── Right column ── */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-icon-box {
+  width: 36px;
+  height: 36px;
+  background: rgba(200, 169, 110, 0.12);
+  border: 1px solid rgba(200, 169, 110, 0.25);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.contact-detail-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-detail-value {
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.clinics-heading {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.clinics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.clinic-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  border-left: 2.5px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 14px;
+}
+
+.clinic-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.clinic-days {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.clinic-hours {
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* ── Map strip ── */
+.map-strip {
+  border-radius: 10px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-strip::before {
+  content: '';
+  /* ::before is a pseudo-element — a fake element
+     CSS inserts before the real content. content: ''
+     is required even when empty. We use it here
+     to create the grid background pattern */
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200,169,110,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,169,110,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  /* two overlapping linear-gradients create
+     a grid pattern — this is a common CSS trick
+     for subtle backgrounds without images */
+}
+
+.map-pin {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  z-index: 1;
+  /* z-index: 1 lifts pins above the ::before grid */
+}
+
+.map-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 3px rgba(200, 169, 110, 0.3);
+  /* three rings: the dot itself, a white border,
+     then a soft gold glow ring via box-shadow */
+  flex-shrink: 0;
+}
+
+.map-pin-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+  padding: 20px 60px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.social-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Light mode form adjustments ── */
+body.light-mode .form-input {
+  background: rgba(18, 16, 74, 0.05);
+  border-color: rgba(18, 16, 74, 0.15);
+  color: var(--text-primary);
+}
+
+body.light-mode .form-input::placeholder {
+  color: rgba(18, 16, 74, 0.25);
+}
+
+body.light-mode .form-select option {
+  background: #ECEAE3;
+  color: #12104A;
+}
+
+body.light-mode .contact-form-card {
+  background: rgba(18, 16, 74, 0.04);
+}
+
+
+/* ================================
      RESPONSIVE — TABLET
      Triggers when screen is 1024px or narrower
   ================================ */
@@ -918,6 +1254,10 @@ body.light-mode .service-icon {
     .services-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    .contact {
+    padding: 60px 30px 40px;
+  }
   
   }
 
@@ -1114,5 +1454,40 @@ RESPONSIVE — MOBILE
   .service-card:hover {
     transform: none;
   }
+
+  .contact {
+    padding: 50px 20px 32px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    /* form stacks above clinic info on mobile */
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    /* each input takes full width on mobile */
+  }
+
+  .clinics-grid {
+    grid-template-columns: 1fr 1fr;
+    /* keep 2 columns — clinic cards are compact */
+  }
+
+  .map-strip {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 16px;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .footer {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
 }
   
