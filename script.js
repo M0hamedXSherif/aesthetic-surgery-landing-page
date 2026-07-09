@@ -60,36 +60,107 @@ window.addEventListener('resize', () => {
 
 
 
+// ================================
+// MOBILE MENU
+// ================================
 
+const hamburger       = document.getElementById('hamburger');
+const mobileMenu      = document.getElementById('mobile-menu');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+const mobileLinks     = document.querySelectorAll('.mobile-menu-item');
+const mobileThemeBtn  = document.getElementById('mobile-theme-toggle');
+const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+const mobileThemeLabel= document.getElementById('mobile-theme-label');
+
+// open the menu
+hamburger.addEventListener('click', function() {
+  mobileMenu.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // overflow: hidden prevents page scrolling
+  // while the menu is open — feels native
+});
+
+// close via X button
+mobileMenuClose.addEventListener('click', closeMenu);
+
+// close when clicking the dark backdrop
+// (but not when clicking the card itself)
+mobileMenu.addEventListener('click', function(e) {
+  if (e.target === mobileMenu) {
+    // e.target is the element that was actually clicked
+    // if it's the overlay (not the card), close the menu
+    closeMenu();
+  }
+});
+
+// close when a nav link is clicked
+mobileLinks.forEach(function(link) {
+  link.addEventListener('click', function() {
+    if (link.id !== 'mobile-theme-toggle') {
+      closeMenu();
+    }
+  });
+});
+
+function closeMenu() {
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+  // restore scrolling
+}
+
+// mobile theme toggle — mirrors the desktop toggle
+mobileThemeBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  // e.preventDefault() stops the href="#" from
+  // jumping the page to the top
+  document.body.classList.toggle('light-mode');
+  const isLight = document.body.classList.contains('light-mode');
+  mobileThemeLabel.textContent = isLight ? 'Dark' : 'Theme';
+});
+
+// close menu with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMenu();
+  // keyboard shortcut — professional UX touch
+  // e.key gives us the name of the key pressed
+})
+
+
+
+
+
+
+
+
+
+
+// ================================
 // THEME TOGGLE
-// Step 1: Find the toggle button in the DOM
-// querySelector finds the FIRST element matching
-// the CSS selector you pass — same syntax as CSS
+// ================================
+
 const toggleBtn = document.querySelector('.theme-toggle');
 
-// Step 2: Find the body element
-// document.body is a shortcut — always refers to <body>
-const body = document.body;
-
-// Step 3: Listen for a click on the button
-// 'click' is the event name
-// the second argument is the function that runs when clicked
 toggleBtn.addEventListener('click', function() {
-
-  // Toggle the class 'light-mode' on the body
-  // If body has it → remove it (goes back to dark)
-  // If body doesn't have it → add it (switches to light)
-  body.classList.toggle('light-mode');
-
-  // Step 4: Change the button icon based on current mode
-  // classList.contains() checks if a class exists → returns true/false
-  const isLight = body.classList.contains('light-mode');
-
-  // If light mode is ON → show moon icon (click to go dark)
-  // If light mode is OFF → show sun icon (click to go light)
-  toggleBtn.textContent = isLight ? '🌙' : '🌞';
-
+  document.body.classList.toggle('light-mode');
+  
+  // DON'T use textContent — it destroys the SVG
+  // instead update the SVG color via CSS variables
+  // the SVG already adapts because it uses currentColor
+  // which inherits from the button's color property
+  
+  const isLight = document.body.classList.contains('light-mode');
+  
+  // store preference so it persists on page refresh
+  // localStorage saves data in the browser permanently
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
 });
+
+// on page load, restore saved theme preference
+// this runs immediately when the script loads
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  document.body.classList.add('light-mode');
+}
 
 
 

@@ -16,7 +16,7 @@
         NAVBAR
         -->
         
-        <nav class="navbar" id="main-navbar">
+        <!-- <nav class="navbar" id="main-navbar">
         
         <svg class="nav-list" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
         
@@ -42,7 +42,137 @@
             </button>
         </div>
 
-    </nav>
+    </nav> -->
+
+    <nav class="navbar" id="main-navbar">
+
+        <!-- hamburger — visible on mobile only -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" 
+                fill="currentColor" viewBox="0 0 256 256">
+            <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z
+                    M40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Z
+                    M216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/>
+            </svg>
+        </button>
+
+        <!-- logo -->
+        <div class="nav-logo">
+            <img src="materials/kr-logo.jpg" alt="Dr. Karim Rafla">
+        </div>
+
+        <!-- desktop links — hidden on mobile -->
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!-- right side -->
+        <div class="nav-right">
+            <img src="materials/dr-p-img.jpg" alt="Dr Karim Rafla">
+            <button class="nav-btn">Sign up</button>
+            <button class="theme-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="none"/>
+                <line x1="128" y1="40" x2="128" y2="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <circle cx="128" cy="128" r="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="64" y1="64" x2="48" y2="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="64" y1="192" x2="48" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="192" y1="64" x2="208" y2="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="192" y1="192" x2="208" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="40" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="128" y1="216" x2="128" y2="240" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+                <line x1="216" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+            </svg>
+            </button>
+        </div>
+
+        </nav>
+
+        <!-- MOBILE MENU OVERLAY -->
+        <!-- sits outside the nav, covers the whole screen -->
+        <div class="mobile-menu" id="mobile-menu">
+
+        <!-- floating card -->
+        <div class="mobile-menu-card">
+
+            <!-- card header: logo + close button -->
+            <div class="mobile-menu-header">
+            <div class="mobile-menu-logo">
+                <img src="materials/kr-logo.jpg" alt="">
+                <span>Dr. Karim Rafla</span>
+            </div>
+            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
+                    fill="currentColor" viewBox="0 0 256 256">
+                <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/>
+                </svg>
+            </button>
+            </div>
+
+            <!-- nav links as a 2x3 grid of cards -->
+            <div class="mobile-menu-grid">
+
+            <a href="#home" class="mobile-menu-item" id="menu-link">
+                <div class="mobile-menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"/>
+                </svg>
+                </div>
+                <span>Home</span>
+            </a>
+
+            <a href="#about" class="mobile-menu-item">
+                <div class="mobile-menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8Z"/>
+                </svg>
+                </div>
+                <span>About</span>
+            </a>
+
+            <a href="#work" class="mobile-menu-item">
+                <div class="mobile-menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V96H40ZM40,200V112H216v88Z"/>
+                </svg>
+                </div>
+                <span>Work</span>
+            </a>
+
+            <a href="#services" class="mobile-menu-item">
+                <div class="mobile-menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M243.31,136,144,36.69a16,16,0,0,0-22.62,0l-10.35,10.35-16.57-4.46a16,16,0,0,0-19.64,11.07h0L70.75,70.76,53.54,75.3a16,16,0,0,0-11.07,19.64l4.45,16.53L36.68,121.78a16,16,0,0,0,0,22.63L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68A16,16,0,0,0,243.31,136Z"/>
+                </svg>
+                </div>
+                <span>Services</span>
+            </a>
+
+            <a href="#contact" class="mobile-menu-item">
+                <div class="mobile-menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.56l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l-.06-.13L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/>
+                </svg>
+                </div>
+                <span>Contact</span>
+            </a>
+
+            <a href="#" class="mobile-menu-item" id="mobile-theme-toggle">
+                <div class="mobile-menu-icon" id="mobile-theme-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23Z"/>
+                </svg>
+                </div>
+                <span id="mobile-theme-label">Theme</span>
+            </a>
+
+            </div>
+        </div>
+    </div>
 
     <!--
          HERO 
