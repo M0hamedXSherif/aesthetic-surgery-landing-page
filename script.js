@@ -38,7 +38,7 @@ function draw() {
 
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255, 255, 255, ${tw.toFixed(2)})`;
+    ctx.fillStyle = `rgba(255, 255, 255, (${tw.toFixed(2)})`;
     ctx.fill();
   }
 
