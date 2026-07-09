@@ -54,6 +54,13 @@ window.addEventListener('resize', () => {
 
 
 
+
+
+
+
+
+
+
 // THEME TOGGLE
 // Step 1: Find the toggle button in the DOM
 // querySelector finds the FIRST element matching
@@ -84,8 +91,16 @@ toggleBtn.addEventListener('click', function() {
 
 });
 
-// NAV EFFECTS
 
+
+
+
+
+
+
+
+
+// NAV EFFECTS
 window.onscroll = function() {
     let navbar = document.getElementById("main-navbar");
     if (window.pageYOffset > 15) {
@@ -94,3 +109,62 @@ window.onscroll = function() {
         navbar.classList.remove("sticky");
     }
 };
+
+
+
+
+
+
+
+
+
+
+// ================================
+// GALLERY FILTER
+// ================================
+
+// Get ALL tab buttons at once — returns a list
+const tabs = document.querySelectorAll('.gallery-tab');
+
+// Get ALL gallery cards at once — returns a list
+const cards = document.querySelectorAll('.gallery-card');
+
+// Loop through every tab and attach a click listener
+tabs.forEach(function(tab) {
+
+  tab.addEventListener('click', function() {
+
+    // Step 1: read which filter this tab represents
+    // dataset.filter reads the data-filter="..." attribute
+    const filter = tab.dataset.filter;
+    // if tab has data-filter="rhinoplasty"
+    // then filter = "rhinoplasty"
+
+    // Step 2: update which tab looks active
+    tabs.forEach(function(t) {
+      t.classList.remove('active');
+      // remove active from ALL tabs first
+    });
+    tab.classList.add('active');
+    // then add active ONLY to the one just clicked
+
+    // Step 3: show or hide each card
+    cards.forEach(function(card) {
+
+      // read this card's category
+      const category = card.dataset.category;
+
+      // if filter is "all" OR this card matches
+      // the filter → show it by removing hidden
+      if (filter === 'all' || category === filter) {
+        card.classList.remove('hidden');
+      } else {
+        // otherwise hide it by adding hidden
+        card.classList.add('hidden');
+      }
+
+    });
+
+  });
+
+});
