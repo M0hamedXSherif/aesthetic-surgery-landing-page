@@ -10,6 +10,7 @@ Define colors once, use everywhere
   --bg-primary:     #0d0c38;
   --bg-secondary:   #1A1760;
   --nav-bg: #4c4c4ca1;
+  --nav-bg-fixed: #4c4c4cbf;
   --list-color: rgba(255, 255, 255, 0.55);
   --canvas-bg: #0a0a12;
   --text-primary:   #ffffff;
@@ -21,12 +22,18 @@ Define colors once, use everywhere
   --nav-link-color: rgba(255, 255, 255, 0.65);
 }
 
+/* Making the scroll move smoothly */
+html{
+  scroll-behavior: smooth;
+}
+
 /* When body has class "light-mode", override the variables */
 /* CSS sees this and swaps ALL colors at once */
 body.light-mode {
   --bg-primary:     #d5d5d5ef;
   --bg-secondary:   #ECEAE3;
-  --nav-bg: #7c5e1ad4;
+  --nav-bg: #7c5f1ad5;
+  --nav-bg-fixed: #4c4c4cbf;
   --list-color: #58440b;
   --canvas-bg: #d4e4e3d1;
   --text-primary:   #12104A;
@@ -68,10 +75,10 @@ body {
 }
 
 /* font-family: what font the whole page uses
-   background-color: the deep navy from your design
+background-color: the deep navy from your design
    color: default text color — white on navy */
-
-/* Canvas's Styling */
+   
+   /* Canvas's Styling */
 canvas {
   position: fixed;
   top: 0; left: 0;
@@ -81,7 +88,7 @@ canvas {
 }
 
 /* ================================
-   NAVBAR
+NAVBAR
 ================================ */
 
 .navbar {
@@ -94,29 +101,42 @@ canvas {
   transition: background-color 0.3s ease;
   border-radius: 15px;
   margin: 5px;
+  transition: all 0.3s ease;
 }
 
-/* display: flex — this is the magic.
-   flex turns a box into a "row" that lines
-   its children up side by side automatically.
-   justify-content: space-between pushes children
+.navbar.sticky {
+  position: sticky;
+  top: 8px;
+  margin: 0 10px; 
+  border-radius: 20px; 
+  z-index: 1000;
+  background-color: var(--nav-bg-fixed); 
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+  transition: all 0.3s ease;
+  }
+  
+  /* display: flex — this is the magic.
+  flex turns a box into a "row" that lines
+  its children up side by side automatically.
+  justify-content: space-between pushes children
    to opposite ends (logo on left, btn on right)
    align-items: center lines them up vertically
    padding: 18px top/bottom, 60px left/right */
-
-.nav-list{
-  display: none;
-  fill: var(--list-color);
-  transition: fill 0.3s ease;
-}
-
-.nav-logo {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.nav-logo img{
+   
+   .nav-list{
+     display: none;
+     fill: var(--list-color);
+     transition: fill 0.3s ease;
+    }
+    
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .nav-logo img{
   width: 35px;
 }
 
@@ -126,7 +146,7 @@ canvas {
 }
 
 /* gap: 36px puts 36px of space between each link
-   without needing margin on every single one */
+without needing margin on every single one */
 
 .nav-links a {
   color: var(--nav-link-color);
@@ -137,16 +157,16 @@ canvas {
 /* .nav-links a means: target every <a> tag
    that lives INSIDE .nav-links
    text-decoration: none removes the underline */
-
-/* ================================
+   
+   /* ================================
    NAV RIGHT
-================================ */
-
-.nav-right{
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+   ================================ */
+   
+   .nav-right{
+     display: flex;
+     align-items: center;
+     gap: 15px;
+    }
 /* EXTRA FROM ME */
 .nav-right img{
   width: 35px;
@@ -166,7 +186,7 @@ canvas {
 }
 
 /* cursor: pointer makes the mouse turn into
-   a hand when you hover — signals clickable */
+a hand when you hover — signals clickable */
 
 
 .theme-toggle {
@@ -193,7 +213,7 @@ canvas {
 }
 
 /* ================================
-   HERO SECTION
+HERO SECTION
 ================================ */
 
 .hero {
@@ -202,6 +222,7 @@ canvas {
   justify-content: space-between;
   padding: 80px 60px;
   min-height: 90vh;
+  scroll-margin-top: 100px;
 }
 
 /* display: flex here puts hero-left and hero-right
@@ -250,6 +271,18 @@ canvas {
   display: flex;
   gap: 16px;
   margin-bottom: 30px;
+}
+
+.hero-buttons a{
+  text-decoration: none;
+}
+
+.work-a{
+  color: var(--bg-primary);
+}
+
+.consult-a{
+  color: var(--text-primary);
 }
 
 .btn-primary {
@@ -409,6 +442,7 @@ canvas {
 .about {
   padding: 80px 60px;
   background-color: var(--bg-primary);
+  scroll-margin-top: 80px;
 }
 
 /* ── Section header (centered) ── */
@@ -598,6 +632,7 @@ canvas {
 .gallery {
   padding: 80px 60px;
   background-color: var(--bg-primary);
+  scroll-margin-top: 50px;
 }
 
 .gallery-sub {
@@ -746,6 +781,7 @@ canvas {
   padding: 80px 60px;
   position: relative;
   z-index: 1;
+  scroll-margin-top: 50px;
 }
 
 .services-grid {
@@ -882,6 +918,7 @@ body.light-mode .service-icon {
   padding: 80px 60px 60px;
   position: relative;
   z-index: 1;
+  scroll-margin-top: 50px;
 }
 
 /* ── Two column grid ── */
