@@ -448,6 +448,23 @@ HERO SECTION
   initial-value: 0deg;
 }
 
+.reveal-element {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-element.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
 /* ================================
    ABOUT SECTION
 ================================ */
