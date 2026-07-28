@@ -1781,3 +1781,12 @@ RESPONSIVE — MOBILE
   }
 
 }
+
+@media (min-width: 370px) {
+  .gallery-grid {
+  display: grid;
+  /* تبدأ بعمود واحد، وبمجرد أن توفر مساحة تسمح بتكرار أعمدة بحجم 300px مثلاً، تأتي بجانب بعضها */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+}

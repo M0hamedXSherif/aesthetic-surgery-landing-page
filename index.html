@@ -12,10 +12,10 @@
 </head>
 <body>
     <canvas id="starCanvas"></canvas>
-    <!-- 
-        NAVBAR
-        -->
 
+    <!-----------
+        NAVBAR
+    ------------>
     <nav class="navbar" id="main-navbar">
 
         <!-- hamburger — visible on mobile only -->
@@ -64,10 +64,9 @@
 
     </nav>
 
-        <!-- MOBILE MENU OVERLAY -->
-        <!-- sits outside the nav, covers the whole screen -->
-        <div class="mobile-menu" id="mobile-menu">
-
+    <!-- MOBILE MENU OVERLAY -->
+    <!-- sits outside the nav, covers the whole screen -->
+    <div class="mobile-menu" id="mobile-menu">
         <!-- floating card -->
         <div class="mobile-menu-card">
 
@@ -88,67 +87,76 @@
             <!-- nav links as a 2x3 grid of cards -->
             <div class="mobile-menu-grid">
 
-            <a href="#home" class="mobile-menu-item" id="menu-link">
-                <div class="mobile-menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"/>
-                </svg>
-                </div>
-                <span>Home</span>
-            </a>
+                <a href="#home" class="mobile-menu-item" id="menu-link">
+                    <div class="mobile-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"/>
+                    </svg>
+                    </div>
+                    <span>Home</span>
+                </a>
 
-            <a href="#about" class="mobile-menu-item">
-                <div class="mobile-menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8Z"/>
-                </svg>
-                </div>
-                <span>About</span>
-            </a>
+                <a href="#about" class="mobile-menu-item">
+                    <div class="mobile-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8Z"/>
+                    </svg>
+                    </div>
+                    <span>About</span>
+                </a>
 
-            <a href="#work" class="mobile-menu-item">
-                <div class="mobile-menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V96H40ZM40,200V112H216v88Z"/>
-                </svg>
-                </div>
-                <span>Work</span>
-            </a>
+                <a href="#work" class="mobile-menu-item">
+                    <div class="mobile-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V96H40ZM40,200V112H216v88Z"/>
+                    </svg>
+                    </div>
+                    <span>Work</span>
+                </a>
 
-            <a href="#services" class="mobile-menu-item">
-                <div class="mobile-menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M243.31,136,144,36.69a16,16,0,0,0-22.62,0l-10.35,10.35-16.57-4.46a16,16,0,0,0-19.64,11.07h0L70.75,70.76,53.54,75.3a16,16,0,0,0-11.07,19.64l4.45,16.53L36.68,121.78a16,16,0,0,0,0,22.63L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68A16,16,0,0,0,243.31,136Z"/>
-                </svg>
-                </div>
-                <span>Services</span>
-            </a>
+                <a href="#services" class="mobile-menu-item">
+                    <div class="mobile-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M243.31,136,144,36.69a16,16,0,0,0-22.62,0l-10.35,10.35-16.57-4.46a16,16,0,0,0-19.64,11.07h0L70.75,70.76,53.54,75.3a16,16,0,0,0-11.07,19.64l4.45,16.53L36.68,121.78a16,16,0,0,0,0,22.63L136,243.31a16,16,0,0,0,22.63,0l84.68-84.68A16,16,0,0,0,243.31,136Z"/>
+                    </svg>
+                    </div>
+                    <span>Services</span>
+                </a>
 
-            <a href="#contact" class="mobile-menu-item">
-                <div class="mobile-menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.56l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l-.06-.13L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/>
-                </svg>
-                </div>
-                <span>Contact</span>
-            </a>
+                <a href="#contact" class="mobile-menu-item">
+                    <div class="mobile-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.56l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l-.06-.13L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/>
+                    </svg>
+                    </div>
+                    <span>Contact</span>
+                </a>
 
-            <a href="#" class="mobile-menu-item" id="mobile-theme-toggle">
-                <div class="mobile-menu-icon" id="mobile-theme-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23Z"/>
-                </svg>
-                </div>
-                <span id="mobile-theme-label">Theme</span>
-            </a>
+                <a href="#" class="mobile-menu-item" id="mobile-theme-toggle">
+                    <div class="mobile-menu-icon" id="mobile-theme-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23Z"/>
+                    </svg>
+                    </div>
+                    <span id="mobile-theme-label">Theme</span>
+                </a>
 
             </div>
+            
         </div>
     </div>
 
-    <!--
-         HERO 
-    -->
+
+
+
+
+
+
+
+
+    <!----------------
+         HERO SECTION
+    ----------------->
 
     <section class="hero" id="home">
         <div class="hero-left">
@@ -182,9 +190,18 @@
         </div>
     </section>
 
-    <!-- 
-        ABOUT
-    -->
+
+
+
+
+
+
+
+
+
+    <!----------------
+        ABOUT SECTION
+    ----------------->
 
     <section class="about" id="about">
 
@@ -197,94 +214,96 @@
 
         <!-- Two column content area -->
         <div class="about-grid">
-
             <!-- LEFT COLUMN -->
             <div class="about-left">
+                <!-- Doctor photo -->
+                <img 
+                    class="about-img" 
+                    src="materials/dr-in-op.jpg" 
+                    alt="Dr. Karim Rafla in surgery">
 
-            <!-- Doctor photo -->
-            <img 
-                class="about-img" 
-                src="materials/dr-in-op.jpg" 
-                alt="Dr. Karim Rafla in surgery">
+                <!-- Italic quote with gold left border -->
+                <blockquote class="about-quote">
+                    <p>"My approach is to enhance what is naturally yours — with precision, artistry, and complete discretion."</p>
+                    — Dr. Karim Rafla
+                </blockquote>
 
-            <!-- Italic quote with gold left border -->
-            <blockquote class="about-quote">
-                <p>"My approach is to enhance what is naturally yours — with precision, artistry, and complete discretion."</p>
-                — Dr. Karim Rafla
-            </blockquote>
-
-            <!-- Stat boxes row -->
-            <div class="about-stats">
-                <div class="about-stat-box">
-                <span class="about-stat-number">10+</span>
-                <span class="about-stat-label">Years exp.</span>
+                <!-- Stat boxes row -->
+                <div class="about-stats">
+                    <div class="about-stat-box">
+                    <span class="about-stat-number">10+</span>
+                    <span class="about-stat-label">Years exp.</span>
+                    </div>
+                    <div class="about-stat-box">
+                    <span class="about-stat-number">2k+</span>
+                    <span class="about-stat-label">Procedures</span>
+                    </div>
+                    <div class="about-stat-box">
+                    <span class="about-stat-number">3</span>
+                    <span class="about-stat-label">Fellowships</span>
+                    </div>
                 </div>
-                <div class="about-stat-box">
-                <span class="about-stat-number">2k+</span>
-                <span class="about-stat-label">Procedures</span>
-                </div>
-                <div class="about-stat-box">
-                <span class="about-stat-number">3</span>
-                <span class="about-stat-label">Fellowships</span>
-                </div>
-            </div>
-
             </div>
 
             <!-- RIGHT COLUMN -->
             <div class="about-right">
+                <!-- Bio paragraph -->
+                <p class="about-bio">Dr. Karim Rafla is a board-certified plastic surgeon with international training from three of the world's leading institutions. His practice combines surgical precision with a deep commitment to natural-looking results.</p>
+                <!-- Credentials label -->
+                <p class="credentials-label">Credentials</p>
+                <!-- Credential cards -->
+                <div class="credentials-list">
+                    <div class="credential-card">
+                        <img 
+                            class="credential-img" 
+                            src="materials/University-of-Alberta-Website-Header-Mobile-2023.jpg.jpg" 
+                            alt="University of Alberta">
+                        <div class="credential-text">
+                            <p class="credential-school">University of Alberta, Canada</p>
+                            <p class="credential-degree">MSc Plastic Surgery — Highest Honours</p>
+                        </div>
+                    </div>
 
-            <!-- Bio paragraph -->
-            <p class="about-bio">Dr. Karim Rafla is a board-certified plastic surgeon with international training from three of the world's leading institutions. His practice combines surgical precision with a deep commitment to natural-looking results.</p>
+                    <div class="credential-card">
+                        <img 
+                            class="credential-img" 
+                            src="materials/royel-eagle.png" 
+                            alt="Royal College of Surgeons">
+                        <div class="credential-text">
+                            <p class="credential-school">United Kingdom</p>
+                            <p class="credential-degree">Member of the Royal College of Surgeons of England</p>
+                        </div>
+                    </div>
 
-            <!-- Credentials label -->
-            <p class="credentials-label">Credentials</p>
-
-            <!-- Credential cards -->
-            <div class="credentials-list">
-
-                <div class="credential-card">
-                <img 
-                    class="credential-img" 
-                    src="materials/University-of-Alberta-Website-Header-Mobile-2023.jpg.jpg" 
-                    alt="University of Alberta">
-                <div class="credential-text">
-                    <p class="credential-school">University of Alberta, Canada</p>
-                    <p class="credential-degree">MSc Plastic Surgery — Highest Honours</p>
+                    <div class="credential-card">
+                        <img 
+                            class="credential-img" 
+                            src="materials/University-of-Alberta-Website-Header-Mobile-2023.jpg.jpg" 
+                            alt="University of Alberta">
+                        <div class="credential-text">
+                            <p class="credential-school">University of Alberta, Canada</p>
+                            <p class="credential-degree">Fellow of Plastic Surgery</p>
+                        </div>
+                    </div>
                 </div>
-                </div>
-
-                <div class="credential-card">
-                <img 
-                    class="credential-img" 
-                    src="materials/royel-eagle.png" 
-                    alt="Royal College of Surgeons">
-                <div class="credential-text">
-                    <p class="credential-school">United Kingdom</p>
-                    <p class="credential-degree">Member of the Royal College of Surgeons of England</p>
-                </div>
-                </div>
-
-                <div class="credential-card">
-                <img 
-                    class="credential-img" 
-                    src="materials/University-of-Alberta-Website-Header-Mobile-2023.jpg.jpg" 
-                    alt="University of Alberta">
-                <div class="credential-text">
-                    <p class="credential-school">University of Alberta, Canada</p>
-                    <p class="credential-degree">Fellow of Plastic Surgery</p>
-                </div>
-                </div>
-
-            </div>
             </div>
 
         </div>
     </section>
 
-    <!-----------
-    B&A Section
-    ------------>
+
+
+
+
+
+
+
+
+
+
+    <!----------------
+        B&A Section
+    ----------------->
 
     <section class="gallery" id="work">
 
@@ -310,117 +329,143 @@
 
             <!-- data-category tells JS which category this card belongs to -->
             <div class="gallery-card" data-category="rhinoplasty">
-            <div class="ba-pair">
-                <div class="ba-side">
-                <span class="ba-label before-label">Before</span>
+                <div class="ba-pair">
+                    <div class="ba-side">
+                        <img 
+                        class="ba-img" 
+                        src="materials/Rhino-B.png" 
+                        alt="Before facelift">
+                        <span class="ba-label before-label">Before</span>
+                    </div>
+                    <div class="ba-side ba-after-side">
+                        <img 
+                        class="ba-img" 
+                        src="materials/Rhino-A.png" 
+                        alt="After facelift">
+                        <span class="ba-label after-label">After</span>
+                    </div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <p class="gallery-card-title">Rhinoplasty</p>
+                        <p class="gallery-card-meta">male · 28 yrs · 6 months post-op</p>
+                    </div>
                 </div>
-                <div class="ba-side ba-after-side">
-                <span class="ba-label after-label">After</span>
-                </div>
-            </div>
-            <div class="gallery-card-info">
-                <p class="gallery-card-title">Rhinoplasty</p>
-                <p class="gallery-card-meta">Female · 28 yrs · 6 months post-op</p>
-            </div>
-            </div>
 
-            <div class="gallery-card" data-category="facelift">
-            <div class="ba-pair">
-                <div class="ba-side">
-                <span class="ba-label before-label">Before</span>
+                <div class="gallery-card" data-category="facelift">
+                    <div class="ba-pair">
+                        <div class="ba-side">
+                            <img 
+                            class="ba-img" 
+                            src="materials/face-B.png" 
+                            alt="Before facelift">
+                            <span class="ba-label before-label">Before</span>
+                        </div>
+                        <div class="ba-side ba-after-side">
+                            <img 
+                            class="ba-img" 
+                            src="materials/face-A.png" 
+                            alt="After facelift">
+                            <span class="ba-label after-label">After</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <p class="gallery-card-title">Facelift</p>
+                        <p class="gallery-card-meta">male · 52 yrs · 1 year post-op</p>
+                    </div>
                 </div>
-                <div class="ba-side ba-after-side">
-                <span class="ba-label after-label">After</span>
-                </div>
-            </div>
-            <div class="gallery-card-info">
-                <p class="gallery-card-title">Facelift</p>
-                <p class="gallery-card-meta">Female · 52 yrs · 1 year post-op</p>
-            </div>
-            </div>
 
-            <div class="gallery-card" data-category="rhinoplasty">
-            <div class="ba-pair">
-                <div class="ba-side">
-                    <img 
-                    class="ba-img" 
-                    src="materials/Before-facelift.jpg" 
-                    alt="Before facelift">
-                    <span class="ba-label before-label">Before</span>
+                <div class="gallery-card" data-category="rhinoplasty">
+                    <div class="ba-pair">
+                        <div class="ba-side">
+                            <img 
+                            class="ba-img" 
+                            src="materials/face-B(2).png" 
+                            alt="Before facelift">
+                            <span class="ba-label before-label">Before</span>
+                        </div>
+                        <div class="ba-side ba-after-side">
+                            <img 
+                            class="ba-img" 
+                            src="materials/face-A(2).png" 
+                            alt="After facelift">
+                            <span class="ba-label after-label">After</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <p class="gallery-card-title">Rhinoplasty</p>
+                        <p class="gallery-card-meta">Female · 84 yrs · 8 months post-op</p>
+                    </div>
                 </div>
-                <div class="ba-side ba-after-side">
-                    <img 
-                    class="ba-img" 
-                    src="materials/afterFacelift.jpg" 
-                    alt="After facelift">
-                    <span class="ba-label after-label">After</span>
-                </div>
-            </div>
-            <div class="gallery-card-info">
-                <p class="gallery-card-title">Facelift</p>
-                <p class="gallery-card-meta">Female · 84 yrs · 8 months post-op</p>
-            </div>
-            </div>
 
-            <div class="gallery-card" data-category="non-surgical">
-            <div class="ba-pair">
-                <div class="ba-side">
-                    <img
-                    class="ba-img" 
-                    src="/materials/B-Rhinoplasty.jpg" 
-                    alt="before Rhinoplasty">
-                    <span class="ba-label before-label">Before</span>
+                <div class="gallery-card" data-category="non-surgical">
+                    <div class="ba-pair">
+                        <div class="ba-side">
+                            <img
+                            class="ba-img" 
+                            src="/materials/rhino-B(2).png" 
+                            alt="before Rhinoplasty">
+                            <span class="ba-label before-label">Before</span>
+                        </div>
+                        <div class="ba-side ba-after-side">
+                            <img
+                            class="ba-img" 
+                            src="/materials/rhino-A(2).png" 
+                            alt="after Rhinoplasty">
+                            <span class="ba-label after-label">After</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <p class="gallery-card-title">Non-Surgical  </p>
+                        <p class="gallery-card-meta">Female · 29 yrs · 2 weeks post</p>
+                    </div>
                 </div>
-                <div class="ba-side ba-after-side">
-                    <img
-                    class="ba-img" 
-                    src="/materials/A-Rhinoplasty.jpg" 
-                    alt="after Rhinoplasty">
-                    <span class="ba-label after-label">After</span>
-                </div>
-            </div>
-            <div class="gallery-card-info">
-                <p class="gallery-card-title">Rhinoplasty</p>
-                <p class="gallery-card-meta">Female · 29 yrs · 2 weeks post</p>
-            </div>
-            </div>
 
-            <div class="gallery-card" data-category="facelift">
-            <div class="ba-pair">
-                <div class="ba-side">
-                    <img
-                    class="ba-img" 
-                    src="/materials/Rhinoplasty-b.jpg" 
-                    alt="bofore Rhinoplasty">
-                    <span class="ba-label before-label">Before</span>
+                <div class="gallery-card" data-category="facelift">
+                    <div class="ba-pair">
+                        <div class="ba-side">
+                            <img
+                            class="ba-img" 
+                            src="/materials/rhino-B(3).png" 
+                            alt="bofore Rhinoplasty">
+                            <span class="ba-label before-label">Before</span>
+                        </div>
+                        <div class="ba-side ba-after-side">
+                            <img
+                            class="ba-img" 
+                            src="/materials/rhino-A(3).png"
+                            alt="after Rhinoplasty">
+                            <span class="ba-label after-label">After</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <p class="gallery-card-title">Facelift</p>
+                        <p class="gallery-card-meta">Female · 47 yrs · 6 months post-op</p>
+                    </div>
                 </div>
-                <div class="ba-side ba-after-side">
-                    <img
-                    class="ba-img" 
-                    src="/materials/Rhinoplasty-a.jpg"
-                    alt="after Rhinoplasty">
-                    <span class="ba-label after-label">After</span>
-                </div>
-            </div>
-            <div class="gallery-card-info">
-                <p class="gallery-card-title">Rhinoplasty</p>
-                <p class="gallery-card-meta">Female · 47 yrs · 6 months post-op</p>
-            </div>
-            </div>
 
-            <div class="gallery-card" data-category="non-surgical">
-            <div class="ba-pair">
-                <div class="ba-side">
-                <span class="ba-label before-label">Before</span>
+                <div class="gallery-card" data-category="non-surgical">
+                    <div class="ba-pair">
+                        <div class="ba-side">
+                            <img
+                            class="ba-img" 
+                            src="/materials/non-surgical-B.png" 
+                            alt="bofore Rhinoplasty">
+                            <span class="ba-label before-label">Before</span>
+                        </div>
+                        <div class="ba-side ba-after-side">
+                            <img
+                            class="ba-img" 
+                            src="/materials/non-surgical-A.png"
+                            alt="after Rhinoplasty">
+                            <span class="ba-label after-label">After</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <p class="gallery-card-title">Non-Surgical</p>
+                        <p class="gallery-card-meta">Female · 41 yrs · 1 month post</p>
+                    </div>
                 </div>
-                <div class="ba-side ba-after-side">
-                <span class="ba-label after-label">After</span>
-                </div>
-            </div>
-            <div class="gallery-card-info">
-                <p class="gallery-card-title">Non-Surgical</p>
-                <p class="gallery-card-meta">Male · 41 yrs · 1 month post</p>
-            </div>
+
             </div>
 
         </div>
@@ -432,7 +477,23 @@
 
     </section>
 
-        <!-- SERVICES SECTION -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-------------------
+            SERVICES SECTION 
+        --------------------->
     <section class="services" id="services">
 
         <div class="about-header">
@@ -501,7 +562,21 @@
 
     </section>
 
-        <!-- CONTACT SECTION -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!------------------
+        CONTACT SECTION
+    ------------------->
     <section class="contact" id="contact">
 
         <!-- Header -->
@@ -517,134 +592,134 @@
             <!-- LEFT: Form -->
             <div class="contact-form-card">
 
-            <p class="form-privacy-note">
-                🔒 Your information is completely private and confidential.
-            </p>
+                <p class="form-privacy-note">
+                    🔒 Your information is completely private and confidential.
+                </p>
 
-            <form class="contact-form">
+                <form class="contact-form">
 
-                <div class="form-row">
-                <div class="form-group">
-                    <label class="form-label">First name</label>
-                    <input 
-                    type="text" 
-                    class="form-input" 
-                    placeholder="Ahmed" 
-                    name="firstname">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Last name</label>
-                    <input 
-                    type="text" 
-                    class="form-input" 
-                    placeholder="Hassan" 
-                    name="lastname">
-                </div>
-                </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">First name</label>
+                            <input 
+                            type="text" 
+                            class="form-input" 
+                            placeholder="Ahmed" 
+                            name="firstname">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last name</label>
+                            <input 
+                            type="text" 
+                            class="form-input" 
+                            placeholder="Hassan" 
+                            name="lastname">
+                        </div>
+                    </div>
 
-                <div class="form-row">
-                <div class="form-group">
-                    <label class="form-label">Phone number</label>
-                    <input 
-                    type="tel" 
-                    class="form-input" 
-                    placeholder="+20 100 000 0000" 
-                    name="phone">
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Email address</label>
-                    <input 
-                    type="email" 
-                    class="form-input" 
-                    placeholder="example@mail.com" 
-                    name="email">
-                </div>
-                </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Phone number</label>
+                            <input 
+                            type="tel" 
+                            class="form-input" 
+                            placeholder="+20 100 000 0000" 
+                            name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email address</label>
+                            <input 
+                            type="email" 
+                            class="form-input" 
+                            placeholder="example@mail.com" 
+                            name="email">
+                        </div>
+                    </div>
 
-                <div class="form-row">
-                <div class="form-group">
-                    <label class="form-label">Service of interest</label>
-                    <select class="form-input form-select" name="service">
-                    <option value="">Select service</option>
-                    <option value="botox">Botox</option>
-                    <option value="fillers">Dermal Fillers</option>
-                    <option value="profile">Profile Harmonization</option>
-                    <option value="contouring">Facial Contouring</option>
-                    <option value="sculpting">Body Sculpting</option>
-                    <option value="facelift">Facelift</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Preferred clinic</label>
-                    <select class="form-input form-select" name="clinic">
-                    <option value="">Select location</option>
-                    <option value="heliopolis">Heliopolis</option>
-                    <option value="zamalek">Zamalek</option>
-                    <option value="zayed">Sheikh Zayed</option>
-                    <option value="newcairo">New Cairo</option>
-                    </select>
-                </div>
-                </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Service of interest</label>
+                            <select class="form-input form-select" name="service">
+                            <option value="">Select service</option>
+                            <option value="botox">Botox</option>
+                            <option value="fillers">Dermal Fillers</option>
+                            <option value="profile">Profile Harmonization</option>
+                            <option value="contouring">Facial Contouring</option>
+                            <option value="sculpting">Body Sculpting</option>
+                            <option value="facelift">Facelift</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Preferred clinic</label>
+                            <select class="form-input form-select" name="clinic">
+                            <option value="">Select location</option>
+                            <option value="heliopolis">Heliopolis</option>
+                            <option value="zamalek">Zamalek</option>
+                            <option value="zayed">Sheikh Zayed</option>
+                            <option value="newcairo">New Cairo</option>
+                            </select>
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                <label class="form-label">Message</label>
-                <textarea 
-                    class="form-input form-textarea" 
-                    name="message"
-                    placeholder="I would like to schedule a consultation to discuss…"
-                    rows="4"></textarea>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea 
+                        class="form-input form-textarea" 
+                        name="message"
+                        placeholder="I would like to schedule a consultation to discuss…"
+                        rows="4"></textarea>
+                    </div>
 
-                <button type="submit" class="form-submit-btn">
-                Book my consultation
-                </button>
+                    <button type="submit" class="form-submit-btn">
+                        Book my consultation
+                    </button>
 
-            </form>
+                </form>
             </div>
 
             <!-- RIGHT: Contact info + clinic cards -->
             <div class="contact-info">
 
-            <div class="contact-detail">
-                <div class="contact-icon-box">📞</div>
-                <div>
-                <p class="contact-detail-label">Phone</p>
-                <p class="contact-detail-value">+20 122 214 4809</p>
+                <div class="contact-detail">
+                    <div class="contact-icon-box">📞</div>
+                    <div>
+                    <p class="contact-detail-label">Phone</p>
+                    <p class="contact-detail-value">+20 122 214 4809</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="contact-detail">
-                <div class="contact-icon-box">✉️</div>
-                <div>
-                <p class="contact-detail-label">Email</p>
-                <p class="contact-detail-value">contact.drkarimrafla@gmail.com</p>
+                <div class="contact-detail">
+                    <div class="contact-icon-box">✉️</div>
+                    <div>
+                    <p class="contact-detail-label">Email</p>
+                    <p class="contact-detail-value">contact.drkarimrafla@gmail.com</p>
+                    </div>
                 </div>
-            </div>
 
-            <p class="clinics-heading">Clinic locations &amp; hours</p>
+                <p class="clinics-heading">Clinic locations &amp; hours</p>
 
-            <div class="clinics-grid">
-                <div class="clinic-card">
-                <p class="clinic-name">Heliopolis</p>
-                <p class="clinic-days">Mon &amp; Thu</p>
-                <p class="clinic-hours">03:00 PM – 05:00 PM</p>
+                <div class="clinics-grid">
+                    <div class="clinic-card">
+                        <p class="clinic-name">Heliopolis</p>
+                        <p class="clinic-days">Mon &amp; Thu</p>
+                        <p class="clinic-hours">03:00 PM – 05:00 PM</p>
+                    </div>
+                    <div class="clinic-card">
+                        <p class="clinic-name">Zamalek</p>
+                        <p class="clinic-days">Sun &amp; Wed</p>
+                        <p class="clinic-hours">12:00 PM – 02:00 PM</p>
+                    </div>
+                    <div class="clinic-card">
+                        <p class="clinic-name">Sheikh Zayed</p>
+                        <p class="clinic-days">Sat &amp; Tue</p>
+                        <p class="clinic-hours">01:00 PM – 03:00 PM</p>
+                    </div>
+                    <div class="clinic-card">
+                        <p class="clinic-name">New Cairo</p>
+                        <p class="clinic-days">Sat &amp; Tue</p>
+                        <p class="clinic-hours">04:00 PM – 06:00 PM</p>
+                    </div>
                 </div>
-                <div class="clinic-card">
-                <p class="clinic-name">Zamalek</p>
-                <p class="clinic-days">Sun &amp; Wed</p>
-                <p class="clinic-hours">12:00 PM – 02:00 PM</p>
-                </div>
-                <div class="clinic-card">
-                <p class="clinic-name">Sheikh Zayed</p>
-                <p class="clinic-days">Sat &amp; Tue</p>
-                <p class="clinic-hours">01:00 PM – 03:00 PM</p>
-                </div>
-                <div class="clinic-card">
-                <p class="clinic-name">New Cairo</p>
-                <p class="clinic-days">Sat &amp; Tue</p>
-                <p class="clinic-hours">04:00 PM – 06:00 PM</p>
-                </div>
-            </div>
 
             </div>
         </div>
@@ -669,10 +744,20 @@
             </div>
         </div>
 
-        </section>
+    </section>
 
-        <!-- FOOTER -->
-        <footer class="footer">
+
+
+
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
         <p class="footer-copy">© 2026 Dr. Karim Rafla Aesthetics. All rights reserved.</p>
         <div class="footer-socials">
             <a href="#" class="social-btn" aria-label="Instagram">
